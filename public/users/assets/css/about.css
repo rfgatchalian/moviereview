@@ -1,0 +1,36 @@
+body {
+    background-image: url('../img/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+#main-container {
+    margin-top: 500px;
+}
+
+.title {
+    font-weight: 1000;
+    font-size: 3rem;
+}
+
+.sub-title {
+    font-size: 1rem;
+    color: #ffbd59;
+}
+
+.sub-content {
+    text-align: justify;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 1rem;
+    color:  #ffffff;
+}
+
+.gold {
+    color: #ffbd59;
+}
+
+.white {
+    color:  #ffffff;
+}

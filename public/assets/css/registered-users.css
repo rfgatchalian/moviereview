@@ -1,0 +1,27 @@
+body {
+    background-image: url('../img/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.action-buttons {
+    white-space: nowrap;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+}
+
+thead {
+    text-align: center;
+}
+
+tbody {
+    text-align: center;
+}
+
+td {
+    vertical-align: middle;
+}

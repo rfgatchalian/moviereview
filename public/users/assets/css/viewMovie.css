@@ -1,0 +1,67 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('../../assets/img/bgimg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.title {
+    font-style: italic;
+    font-size: 3rem;
+    color:  #d9a500;;
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+}
+
+.sub-content {
+    text-align: justify;
+    margin-left: 70px;
+    margin-right: 50px;
+    font-size: 0.8rem;
+}
+
+.star {
+    color: yellow;
+}
+
+.rateHeading, .avg {
+    color: white;
+}
+
+.description {
+    color: white;
+    text-align: justify;
+}
+
+span {
+    color: whi;
+}
+
+.imgMovie {
+    width: 500px;
+    height: 650px;
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    .img-fluid {
+        width: auto;
+        max-width: 100%;
+        /* Make the image responsive on larger screens */
+        height: 500px;
+
+    }
+}
+
+.ratings{
+    background-color: rgb(219, 227, 234) !important;
+}
+
