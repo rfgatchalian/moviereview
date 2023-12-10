@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="container d-flex justify-content-center mt-5" id="main-container">
+<div class="container d-flex justify-content-center mt-5" id="main-container" >
     <div class="row">
         <div class="col-12 col-md-6" style="margin-top: 170px;">
             <img src="./assets/img/cslogo.png" class="big-logo w-100" alt="...">
