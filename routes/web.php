@@ -32,6 +32,8 @@ Route::group(['prefix' => 'admins', 'as' => 'admins.', 'namespace' => 'Admins', 
     Route::post('/create-movies','MovieController@store')->name('createMovie');
     Route::post('/update-movies','MovieController@update')->name('updateMovie');
     Route::post('/delete-movies','MovieController@destroy')->name('deleteMovie');
+    Route::get('/search-movie','MovieController@searchFunction')->name('searchMovie');
+    Route::get('/movie-details','MovieController@details')->name('details');
 
 });
 // Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {

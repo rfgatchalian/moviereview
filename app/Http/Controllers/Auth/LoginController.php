@@ -56,7 +56,7 @@ class LoginController extends Controller
         $user = Socialite::driver('google')->stateless()->user();
         $this->_registerOrLoginUser($user);
 
-        return redirect()->route('frontend.home');
+        return redirect()->route('movieList');
     }
 
     public function redirectToFacebook(){
@@ -67,7 +67,7 @@ class LoginController extends Controller
 
         $this->_registerOrLoginUser($user);
 
-        return redirect()->route('frontend.home');
+        return redirect()->route('movieList');
     }
 
     protected function _registerOrLoginUser($data){

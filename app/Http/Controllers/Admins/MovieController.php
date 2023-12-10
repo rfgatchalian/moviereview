@@ -17,7 +17,25 @@ class MovieController extends Controller
         return view('admins.movie');
 
     }
+    public function searchFunction(){
+        $movies = Movie::orderBy('id','desc')->where(function ($query) { if(request()->search != 'null') $query->where('title','like','%'.request()->search.'%'); })->get();
 
+        $html = '';
+        if($movies->count() > 0){
+            foreach($movies as $movie)
+            $html .= '<div class="suggest">' . $movie->title . '</div>';
+
+        }
+        else{
+            $html .= '<div class="suggest">No movie title found.</div>';
+        }
+
+        return $html;
+    }
+    public function details(){
+        $movies = Movie::orderBy('id','desc')->where(function ($query) { if(request()->search != 'null') $query->where('title','like','%'.request()->search.'%'); })->get();
+        return $movies;
+    }
 
     public function getMovies(){
 

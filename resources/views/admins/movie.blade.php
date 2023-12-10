@@ -170,5 +170,70 @@
             getMovies(inputValue);
         }
 
+        $('#searchInput').on('input', function() {
+            var query = $(this).val().trim();
+
+            if (query !== '') {
+                $.ajax({
+                    url: '{{route('admins.searchMovie')}}',
+                    method: 'get',
+                    data: {
+                        search: query
+                    },
+                    success: function(data) {
+                        $('#suggestionBox').fadeIn().html(data);
+                        $('#searchResult').html('');
+                        //  filterRows(query);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            } else {
+                $('#suggestionBox').fadeOut(300, function() {
+                    $(this).html('');
+                });
+                $('#searchResult').html('');
+                // showAllRows();
+            }
+        });
+
+        $(document).on('click', '.suggest', function() {
+            var suggestionText = $(this).text().trim();
+            $('#searchInput').val(suggestionText);
+            $('#suggestionBox').fadeOut().html('');
+
+            if (suggestionText !== '') {
+                $.ajax({
+                    url: '{{route('admins.details')}}',
+                    method: 'get',
+                    data: {
+
+                        search: suggestionText
+                    },
+                    success: function(detailsData) {
+                        $('#searchResult').html(detailsData);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        });
+        function filterRows(searchText) {
+            $("#user_table tbody tr").each(function() {
+                var rowData = $(this).text().toLowerCase();
+                if (rowData.indexOf(searchText.toLowerCase()) === -1) {
+                    $(this).hide();
+                } else {
+                    $("#user_table thead").show(); // Show the table header
+                    $(this).show();
+                }
+            });
+        }
+
+
+
+
 </script>
 @endsection
