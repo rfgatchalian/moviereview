@@ -4,6 +4,7 @@
 
 @endsection
 @section('content')
+
     <div class="container box" style="margin-top: 7%;">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal" id="openAddModal">Add Movie</button>
         <br><br>
@@ -77,6 +78,7 @@
         </div>
     </div>
 @endsection
+
 @section('scripts')
 <script>
     function getMovies(search) {
@@ -147,28 +149,7 @@
             }
         });
     }
-    function deleteData(id) {
 
-        var result = confirm("Are you sure to delete?");
-        if(result){
-            $.ajax({
-            url: "{{ route('admins.deleteMovie') }}",
-            type: 'POST',
-            data: {id: id},
-            headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-            success: function (response) {
-                // Handle success, for example, close the modal and show a success message
-                getMovies(null);
-            },
-            error: function (xhr) {
-                // Handle errors, for example, display an error message
-                alert('Error updating data. Please try again.');
-            }
-        });
-        }
-    }
     function handleInputChange() {
         var inputValue = document.getElementById('searchInput').value;
             getMovies(inputValue);

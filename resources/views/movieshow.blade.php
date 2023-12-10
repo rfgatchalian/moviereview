@@ -73,7 +73,7 @@
                         <div class="progress-label-right">(<span id="total_five_star_review">{{$ratings->where('rate',5)->count()}}</span>)</div>
                         <div class="progress">
                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',5)->count() / $ratings->count() ) * 100}}%;"></div>
+                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',5)->count() / ($ratings->count() == 0 ? 1 : $ratings->count()) ) * 100}}%;"></div>
                         </div>
                         <p></p>
                         <p>
@@ -83,7 +83,7 @@
                         <div class="progress-label-right">(<span id="total_five_star_review">{{$ratings->where('rate',4)->count()}}</span>)</div>
                         <div class="progress">
                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',4)->count() / $ratings->count() ) * 100}}%;"></div>
+                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',4)->count() / ($ratings->count() == 0 ? 1 : $ratings->count()) ) * 100}}%;"></div>
                         </div>
                         <p></p>
                         <p>
@@ -93,7 +93,7 @@
                         <div class="progress-label-right">(<span id="total_five_star_review">{{$ratings->where('rate',3)->count()}}</span>)</div>
                         <div class="progress">
                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',3)->count() / $ratings->count() ) * 100}}%;"></div>
+                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',3)->count() / ($ratings->count() == 0 ? 1 : $ratings->count()) ) * 100}}%;"></div>
                         </div>
                         <p></p>
                         <p>
@@ -103,7 +103,7 @@
                         <div class="progress-label-right">(<span id="total_five_star_review">{{$ratings->where('rate',2)->count()}}</span>)</div>
                         <div class="progress">
                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',2)->count() / $ratings->count() ) * 100}}%;"></div>
+                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',2)->count() / ($ratings->count() == 0 ? 1 : $ratings->count()) ) * 100}}%;"></div>
                         </div>
                         <p></p>
                         <p>
@@ -113,7 +113,7 @@
                         <div class="progress-label-right">(<span id="total_five_star_review">{{$ratings->where('rate',1)->count()}}</span>)</div>
                         <div class="progress">
                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',1)->count() / $ratings->count() ) * 100}}%;"></div>
+                                aria-valuemax="100" id="five_star_progress" style="width: {{($ratings->where('rate',1)->count() / ($ratings->count() == 0 ? 1 : $ratings->count()) ) * 100}}%;"></div>
                         </div>
                         <p></p>
                     </div>
