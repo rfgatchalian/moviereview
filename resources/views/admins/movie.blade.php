@@ -81,6 +81,22 @@
 
 @section('scripts')
 <script>
+
+    function clearForm() {
+            // Get the form element
+            var form = document.getElementById("user_form");
+
+            // Loop through all the form elements
+            for (var i = 0; i < form.elements.length; i++) {
+                var element = form.elements[i];
+
+                // Check if the element is an input, textarea, or select
+                if (element.nodeName.toLowerCase() !== "button") {
+                    // Reset the element to its default value
+                    element.value = "";
+                }
+            }
+        }
     function getMovies(search) {
             $.ajax({
                 url: '/admins/get-movies?search='+search+'',
@@ -111,8 +127,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function(response) {
-                        console.log($(this).serialize());
-                        console.log(response.data)
+                        clearForm();
                         getMovies(null);
 
 

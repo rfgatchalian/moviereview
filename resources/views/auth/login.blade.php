@@ -48,11 +48,11 @@
             {{ csrf_field() }}
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required="">
+                <input type="email" class="form-control" id="email" name="email" required="" value="">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required="">
+                <input type="password" class="form-control" id="password" name="password" required="" value="">
                 </div>
             <button type="submit" name="login" class="custom-btn">Log In</button>
         </form>

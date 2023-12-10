@@ -145,6 +145,30 @@
 @endsection
 @section('scripts')
 <script>
+     $('#searchInput').keyup(function() {
+                var query = $(this).val().trim();
+
+                if (query !== '') {
+                    $.ajax({
+                        url: '{{route('user.searchMovie')}}',
+                        method: 'GET',
+                        data: {
+                            search: query
+                        },
+                        success: function(data) {
+                            console.log(data);
+                            $('#suggestionBox').fadeIn();
+                            $('#suggestionBox').html(data);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                } else {
+                    $('#suggestionBox').fadeOut();
+                    $('#suggestionBox').html(''); // Clear the suggestion box content
+                }
+            });
     function getMovies(search) {
         $.ajax({
             url: '/get-movies?search='+search+'',
@@ -169,6 +193,5 @@
             getMovies(inputValue);
         }
 
-
-</script>
+        </script>
 @endsection
